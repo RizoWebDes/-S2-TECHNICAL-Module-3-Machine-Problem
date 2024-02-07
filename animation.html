@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>[S2-TECHNICAL] Module 3 Machine Problem</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        align-items: center; 
+        justify-content: center; 
+        height: 100vh;
+        margin: 0;
+    }
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: #3498db;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: top 0.5s, background-color 1s;
+    }
+    .button-container {
+        text-align: left; 
+    }
+    .button {
+        padding: 10px 20px;
+        margin: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<div class="box" id="box"></div>
+<div class="button-container">
+    <button class="button" onclick="animateBox('Monday')">Monday</button>
+    <button class="button" onclick="animateBox('Tuesday')">Tuesday</button>
+    <button class="button" onclick="animateBox('Wednesday')">Wednesday</button>
+    <button class="button" onclick="animateBox('Thursday')">Thursday</button>
+    <button class="button" onclick="animateBox('Friday')">Friday</button>
+    <button class="button" onclick="animateBox('Saturday')">Saturday</button>
+    <button class="button" onclick="animateBox('Sunday')">Sunday</button>
+</div>
+
+<script>
+    function animateBox(day) {
+        var box = document.getElementById('box');
+        var colors = {
+            'Monday': '#9b59b6',  
+            'Tuesday': '#ffffff',  
+            'Wednesday': '#3498db',
+            'Thursday': '#2ecc71', 
+            'Friday': '#f1c40f',   
+            'Saturday': '#f39c12',
+            'Sunday': '#e74c3c'    
+        };
+        
+        box.style.backgroundColor = colors[day];
+        box.style.top = '200px';
+        
+        setTimeout(function() {
+            box.style.backgroundColor = '#3498db'; 
+            box.style.top = '0';
+        }, 1000); 
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
